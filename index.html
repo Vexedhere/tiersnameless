@@ -24,3 +24,34 @@ $("submitPayment").onclick=async function(){if(!user)return msg("Please sign in 
 sb.auth.onAuthStateChange(function(_,s){user=s&&s.user||null;$("account").textContent=user?(user.email||"Signed in"):"";$("authButton").textContent=user?"Sign out":"Sign in"});refresh();
 })();
 </script></body></html>
+
+/* Unified Nameless Labs premium memberships UI */
+:root{--bg:#080b0a;--paper:#101613;--ink:#eff4e9;--muted:#929d91;--line:rgba(224,239,223,.11);--green:#c5f36b;--soft:rgba(197,243,107,.10);--shadow:0 24px 80px rgba(0,0,0,.28)}
+body{background:radial-gradient(ellipse at 50% -20%,rgba(153,194,91,.15),transparent 44%),#080b0a;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+.header{height:78px;background:rgba(9,13,11,.82);border-color:var(--line);backdrop-filter:blur(22px)}
+.brand{color:#f0f4e9;letter-spacing:-.06em}.brand small{color:#8c998b}
+.btn{background:#141c16;color:#edf3e8;border-color:var(--line);border-radius:11px;padding:11px 16px}
+.btn:hover{border-color:rgba(197,243,107,.45);box-shadow:0 10px 28px rgba(0,0,0,.28)}
+.btn.primary{background:#c5f36b;border-color:#c5f36b;color:#17200f;font-weight:800}
+.hero{max-width:900px;padding:clamp(65px,9vw,112px) 0 42px}
+.eyebrow{color:#c5f36b;letter-spacing:.2em}
+.hero h1{color:#f1f5eb;font-size:clamp(48px,7vw,88px);font-weight:650;letter-spacing:-.09em;line-height:.98}
+.hero p{color:#a1ad9f;max-width:570px;font-size:15px;line-height:1.8}
+.plans{gap:18px;padding:25px 0 76px}
+.plan{background:linear-gradient(155deg,#141c17,#0e1411);border:1px solid var(--line);border-radius:20px;padding:29px;min-height:420px;box-shadow:var(--shadow);transition:transform .25s,border-color .25s,box-shadow .25s}
+.plan:hover{transform:translateY(-6px);border-color:rgba(197,243,107,.4);box-shadow:0 30px 90px rgba(0,0,0,.4)}
+.plan.featured{border:1px solid rgba(197,243,107,.58);background:linear-gradient(155deg,#1b281b,#101711)}
+.plan.featured:before{background:#c5f36b;color:#17200f;border-radius:999px;right:24px;top:-12px;padding:6px 12px}
+.plan h2{color:#f1f5eb;font-size:21px}.plan p{color:#9aa698;line-height:1.65}
+.price{color:#f1f5eb;font-size:48px;letter-spacing:-.08em}.price small{color:#929f91}
+.plan ul{border-color:var(--line);color:#b8c3b5;padding-top:22px}.plan li{margin:12px 0}
+.plan button{padding:13px}
+.note{border-color:var(--line);color:#7f8c7e;line-height:1.8}
+.modal{background:rgba(2,5,3,.78);backdrop-filter:blur(12px)}
+.dialog{background:#111914;border:1px solid var(--line);border-radius:20px;color:#eff4e9;box-shadow:0 35px 100px rgba(0,0,0,.6);padding:30px}
+.dialog h2{color:#f1f5eb;font-size:27px}.dialog p{color:#9aa698}
+.dialog label{color:#aab6a8}.dialog input{background:#0b120e;color:#f1f5eb;border:1px solid var(--line);border-radius:11px;padding:13px}
+.dialog input:focus{border-color:#c5f36b;box-shadow:0 0 0 4px rgba(197,243,107,.09);outline:none}
+.upi{background:#172219;border:1px solid rgba(197,243,107,.22);border-radius:13px}.upi b{color:#eaf5dc}.upi a{color:#c5f36b}
+.status{background:rgba(197,243,107,.09);color:#cce99d;border:1px solid rgba(197,243,107,.13);border-radius:11px;line-height:1.65}
+@media(max-width:760px){.wrap{padding:0 18px}.hero{padding:65px 0 30px}.hero h1{font-size:clamp(45px,12vw,62px)}.plans{grid-template-columns:1fr;gap:16px;padding:20px 0 54px}.plan{min-height:0;padding:25px;border-radius:17px}.plan p{min-height:0}.header{height:70px}.dialog{padding:23px}}
